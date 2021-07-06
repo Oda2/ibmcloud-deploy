@@ -1,0 +1,26 @@
+name: 'IBMCloud Helm Deploy'
+description: 'Uses the Helm package manager to deploy on the IBMCloud'
+inputs:
+  bucket-name:
+    description: 'Name of bucket in IBM COS'
+    required: true
+  helm-name:
+    description: 'Name of Helm Chart'
+    required: true
+  helm-app:
+    description: 'Name of project deployed'
+    required: true
+  version-app:
+    description: 'Version for deploy'
+    required: true
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.bucket-name }}
+    - ${{ inputs.helm-name }}
+    - ${{ inputs.helm-app }}
+    - ${{ inputs.version-app }}
