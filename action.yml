@@ -19,6 +19,9 @@ inputs:
   ibm-region:
     description: 'IBM Region'
     required: true
+  cluster-id:
+    description: 'Cluster ID Kubernetes'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -32,3 +35,4 @@ runs:
     - ${{ inputs.version-app }}
     - ${{ inputs.ibm-api-key }}
     - ${{ inputs.ibm-region }}
+    - ${{ inputs.cluster-id }}

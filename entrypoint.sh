@@ -15,4 +15,6 @@ ibmcloud cr login
 
 ibmcloud cos download --bucket $1 --key $2 $2
 
+ibmcloud ks cluster config --cluster $7
+
 helm upgrade $3 $2 --set=image.tag=$4
