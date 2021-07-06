@@ -1,5 +1,12 @@
 #!/bin/sh -l
 
+ibmcloud --version 
+ibmcloud config --check-version=false
+ibmcloud plugin install -f kubernetes-service
+ibmcloud plugin install -f container-registry
+ibmcloud plugin install -f schematics
+ibmcloud plugin install -f cloud-object-storage
+
 ibmcloud plugin list
 
 ibmcloud login --apikey "$5" -r "$6"
