@@ -13,6 +13,12 @@ inputs:
   version-app:
     description: 'Version for deploy'
     required: true
+  ibm-api-key:
+    description: 'IBM API Key'
+    required: true
+  ibm-region:
+    description: 'IBM Region'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -24,3 +30,5 @@ runs:
     - ${{ inputs.helm-name }}
     - ${{ inputs.helm-app }}
     - ${{ inputs.version-app }}
+    - ${{ inputs.ibm-api-key }}
+    - ${{ inputs.ibm-region }}
