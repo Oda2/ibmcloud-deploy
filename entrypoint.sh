@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
+ibmcloud plugin list
+
 ibmcloud login --apikey "$5" -r "$6"
 ibmcloud cr region-set "$6"
 ibmcloud cr login
